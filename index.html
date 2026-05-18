@@ -11,9 +11,6 @@
     href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap"
     rel="stylesheet" />
   <style>
-    /* ============================================================
-       CSS VARIABLES & RESET
-    ============================================================ */
     :root {
       --accent: #3b82f6;
       --accent-light: #60a5fa;
@@ -97,9 +94,6 @@
       display: block;
     }
 
-    /* ============================================================
-       SCROLLBAR
-    ============================================================ */
     ::-webkit-scrollbar {
       width: 5px;
     }
@@ -113,9 +107,6 @@
       border-radius: 99px;
     }
 
-    /* ============================================================
-       NOISE TEXTURE OVERLAY
-    ============================================================ */
     body::before {
       content: '';
       position: fixed;
@@ -126,9 +117,6 @@
       opacity: 0.4;
     }
 
-    /* ============================================================
-       NAVBAR
-    ============================================================ */
     #navbar {
       position: fixed;
       top: 0;
@@ -247,7 +235,6 @@
       transition: all 0.3s;
     }
 
-    /* Mobile Menu */
     .mobile-menu {
       display: none;
       position: fixed;
@@ -292,9 +279,6 @@
       color: var(--accent);
     }
 
-    /* ============================================================
-       LAYOUT HELPERS
-    ============================================================ */
     .container {
       max-width: 1120px;
       margin: 0 auto;
@@ -345,9 +329,6 @@
       line-height: 1.75;
     }
 
-    /* ============================================================
-       SCROLL ANIMATIONS
-    ============================================================ */
     .reveal {
       opacity: 0;
       transform: translateY(32px);
@@ -380,9 +361,6 @@
       transition-delay: 0.5s;
     }
 
-    /* ============================================================
-       HERO
-    ============================================================ */
     #hero {
       min-height: 100vh;
       display: flex;
@@ -542,12 +520,11 @@
       transform: translateY(-2px);
     }
 
-    /* Hero avatar area */
     .hero-visual {
       position: relative;
     }
 
-    .hero-avatar-ring {
+    /* .hero-avatar-ring {
       width: 230px;
       height: 230px;
       border-radius: 50%;
@@ -568,14 +545,92 @@
       font-size: 3.5rem;
       font-weight: 800;
       color: var(--accent);
-    }
+    } */
+
+    /* ============================================================
+   HERO IMAGE
+============================================================ */
+
+  .hero-visual {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.hero-image-card {
+  width: 560px;
+  height: 360px;
+  border-radius: 28px;
+  overflow: hidden;
+  position: relative;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.08);
+  box-shadow:
+    0 10px 40px rgba(0,0,0,0.45),
+    0 0 40px rgba(59,130,246,0.08);
+}
+
+.hero-image-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 50%;
+  display: block;
+}
+
+.hero-stats {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  width: 100%;
+}
+
+.hero-stat {
+  width: 170px;
+  padding: 1.5rem 1rem;
+  border-radius: 22px;
+  background: rgba(17, 24, 39, 0.85);
+  border: 1px solid rgba(255,255,255,0.06);
+  text-align: center;
+}
+
+.hero-stat-num {
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--accent);
+}
+
+.hero-stat-label {
+  margin-top: 0.4rem;
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+}
+
+@media (max-width: 768px) {
+
+  .hero-image-card {
+    width: 260px;
+    height: 300px;
+  }
+
+  .hero-stats {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .hero-stat {
+    width: 140px;
+  }
+}
 
     .hero-stats {
-      display: flex;
-      flex-direction: column;
-      gap: 0.75rem;
-      margin-top: 1.5rem;
-    }
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+}
 
     .hero-stat {
       background: var(--bg-card);
@@ -598,9 +653,6 @@
       letter-spacing: 0.05em;
     }
 
-    /* ============================================================
-       ABOUT
-    ============================================================ */
     #about {
       background: var(--bg-2);
     }
@@ -661,9 +713,6 @@
       color: var(--text-primary);
     }
 
-    /* ============================================================
-       SKILLS
-    ============================================================ */
     .skills-wrapper {
       margin-top: 3.5rem;
     }
@@ -717,9 +766,6 @@
       flex-shrink: 0;
     }
 
-    /* ============================================================
-       EXPERIENCE
-    ============================================================ */
     #experience {
       background: var(--bg-2);
     }
@@ -841,9 +887,6 @@
       margin-top: 0.1rem;
     }
 
-    /* ============================================================
-       PROJECTS
-    ============================================================ */
     .projects-grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
@@ -939,9 +982,6 @@
       gap: 0.6rem;
     }
 
-    /* ============================================================
-       EDUCATION
-    ============================================================ */
     #education {
       background: var(--bg-2);
     }
@@ -1006,9 +1046,6 @@
       gap: 0.3rem;
     }
 
-    /* ============================================================
-       CONTACT
-    ============================================================ */
     #contact {
       text-align: center;
     }
@@ -1067,9 +1104,6 @@
       flex-shrink: 0;
     }
 
-    /* ============================================================
-       FOOTER
-    ============================================================ */
     footer {
       border-top: 1px solid var(--border);
       padding: 2rem;
@@ -1083,9 +1117,6 @@
       color: var(--accent);
     }
 
-    /* ============================================================
-       RESPONSIVE
-    ============================================================ */
     @media (max-width: 768px) {
       .nav-links {
         display: none;
@@ -1174,9 +1205,6 @@
       }
     }
 
-    /* ============================================================
-       CURSOR GLOW
-    ============================================================ */
     .cursor-glow {
       position: fixed;
       width: 400px;
@@ -1195,9 +1223,6 @@
       }
     }
 
-    /* ============================================================
-       TYPEWRITER
-    ============================================================ */
     .typewriter {
       display: inline;
       border-right: 3px solid var(--accent);
@@ -1217,9 +1242,6 @@
       }
     }
 
-    /* ============================================================
-       BACK TO TOP
-    ============================================================ */
     #back-top {
       position: fixed;
       bottom: 2rem;
@@ -1255,10 +1277,8 @@
 
 <body>
 
-  <!-- Cursor glow -->
   <div class="cursor-glow" id="cursorGlow"></div>
 
-  <!-- Mobile menu -->
   <nav class="mobile-menu" id="mobileMenu">
     <button class="mobile-close" id="mobileClose">✕</button>
     <a href="#hero" onclick="closeMobile()">Home</a>
@@ -1270,9 +1290,8 @@
     <a href="#contact" onclick="closeMobile()">Contact</a>
   </nav>
 
-  <!-- Navbar -->
   <header id="navbar">
-    <div class="nav-logo">Vineeth Kumar Reddy<span>.</span></div>
+    <div class="nav-logo">Vineeth<span>.</span></div>
     <ul class="nav-links">
       <li><a href="#about">About</a></li>
       <li><a href="#skills">Skills</a></li>
@@ -1289,9 +1308,6 @@
     </div>
   </header>
 
-  <!-- ============================================================
-       HERO
-  ============================================================ -->
   <section id="hero">
     <div class="hero-bg-orb orb-1"></div>
     <div class="hero-bg-orb orb-2"></div>
@@ -1303,7 +1319,7 @@
             Available for opportunities
           </div>
           <h1 class="hero-name">
-            Challa Venkata<br>
+            <!-- Ch<br> -->
             <span class="highlight">Vineeth Kumar</span><br>
             Reddy
           </h1>
@@ -1315,12 +1331,13 @@
           </div>
           <div class="hero-cta">
             <a href="#contact" class="btn btn-primary">Get in Touch ↗</a>
+            <a href="/vkr_AIML_FS.pdf" target="_blank" class="btn btn-outline">View Resume 📄</a>
             <a href="#projects" class="btn btn-outline">View Projects →</a>
           </div>
         </div>
-        <div class="hero-visual">
-          <div class="hero-avatar-ring">
-            <div class="hero-avatar-inner">VKR</div>
+        <!-- <div class="hero-visual">
+          <div class="hero-image-card">
+            <img src="your-image.jpg" alt="Vineeth Kumar Reddy">
           </div>
           <div class="hero-stats">
             <div class="hero-stat">
@@ -1332,14 +1349,31 @@
               <div class="hero-stat-label">CGPA</div>
             </div>
           </div>
-        </div>
+        </div> -->
+
+        <div class="hero-visual">
+
+  <div class="hero-image-card">
+    <img src="/pprtfolioimg.jpeg" alt="Vineeth Kumar Reddy">
+  </div>
+
+  <div class="hero-stats">
+
+    <div class="hero-stat">
+      <div class="hero-stat-num">1+</div>
+      <div class="hero-stat-label">Years Exp.</div>
+    </div>
+
+    <div class="hero-stat">
+      <div class="hero-stat-num">8.51</div>
+      <div class="hero-stat-label">CGPA</div>
+    </div>
+
+  </div>
       </div>
     </div>
   </section>
 
-  <!-- ============================================================
-       ABOUT
-  ============================================================ -->
   <section id="about">
     <div class="container">
       <div class="about-grid">
@@ -1386,9 +1420,6 @@
     </div>
   </section>
 
-  <!-- ============================================================
-       SKILLS
-  ============================================================ -->
   <section id="skills">
     <div class="container">
       <div class="section-label reveal">Tech Stack</div>
@@ -1458,9 +1489,6 @@
     </div>
   </section>
 
-  <!-- ============================================================
-       EXPERIENCE
-  ============================================================ -->
   <section id="experience">
     <div class="container">
       <div class="section-label reveal">Career</div>
@@ -1514,9 +1542,6 @@
     </div>
   </section>
 
-  <!-- ============================================================
-       PROJECTS
-  ============================================================ -->
   <section id="projects">
     <div class="container">
       <div class="section-label reveal">Work</div>
@@ -1529,7 +1554,6 @@
 
       <div class="projects-grid">
 
-        <!-- Project 1 -->
         <div class="project-card reveal reveal-delay-1">
           <div class="project-icon">🏥</div>
           <div class="project-title">V23 Healthcare Platform - <small><i>Virinchi Limited Technologies</i></small></div>
@@ -1550,12 +1574,8 @@
             <span class="project-tag">Postman</span>
             <span class="project-tag">GitLab</span>
           </div>
-          <!-- <a href="https://github.com/Vineethkumarreddy2486" class="project-link" target="_blank" rel="noopener">
-            View on GitHub →
-          </a> -->
         </div>
 
-        <!-- Project 2 -->
         <div class="project-card reveal reveal-delay-2">
           <div class="project-icon">🎓🛒</div>
           <div class="project-title">EduShop - Online Course Marketplace</div>
@@ -1577,7 +1597,6 @@
           </a>
         </div>
 
-        <!-- Project 3 -->
         <div class="project-card reveal reveal-delay-4">
           <div class="project-icon">💡🏆</div>
           <div class="project-title">ProjectXplore <small><i>— Project Competition Platform</i></small> </div>
@@ -1601,7 +1620,6 @@
           </a>
         </div>
 
-        <!-- Project 4 -->
         <div class="project-card reveal reveal-delay-3">
           <div class="project-icon">🤖</div>
           <div class="project-title">ML / NLP Experiments</div>
@@ -1617,12 +1635,8 @@
             <span class="project-tag">CNN</span>
             <span class="project-tag">LLMs</span>
           </div>
-          <!-- <a href="https://github.com/Vineethkumarreddy2486" class="project-link" target="_blank" rel="noopener">
-            View on GitHub →
-          </a> -->
         </div>
 
-        <!-- GitHub CTA Card -->
         <div class="project-card reveal reveal-delay-5"
           style="border-style: dashed; align-items:center; justify-content:center; text-align:center; background: var(--accent-subtle);">
           <div style="font-size:2.5rem; margin-bottom:0.75rem;">🐙</div>
@@ -1639,9 +1653,7 @@
     </div>
   </section>
 
-  <!-- ============================================================
-       EDUCATION
-  ============================================================ -->
+
   <section id="education">
     <div class="container">
       <div class="section-label reveal">Background</div>
@@ -1661,9 +1673,7 @@
     </div>
   </section>
 
-  <!-- ============================================================
-       CONTACT
-  ============================================================ -->
+
   <section id="contact">
     <div class="container">
       <div class="section-label reveal" style="justify-content:center;">Let's Connect</div>
@@ -1722,20 +1732,16 @@
     </div>
   </section>
 
-  <!-- Footer -->
   <footer>
     <p>Designed &amp; built by <span>Challa Venkata Vineeth Kumar Reddy</span> · 2025</p>
     <p style="margin-top:0.4rem;">Full Stack Developer · Hyderabad, India</p>
   </footer>
 
-  <!-- Back to top -->
+
   <button id="back-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" title="Back to top">↑</button>
 
-  <!-- ============================================================
-       JAVASCRIPT
-  ============================================================ -->
   <script>
-    /* ----- Dark / Light Theme ----- */
+
     const themeToggle = document.getElementById('themeToggle');
     const html = document.documentElement;
     let isDark = true;
@@ -1746,7 +1752,7 @@
       themeToggle.textContent = isDark ? '☀️' : '🌙';
     });
 
-    /* ----- Navbar scroll ----- */
+
     const navbar = document.getElementById('navbar');
     const backTop = document.getElementById('back-top');
 
@@ -1756,7 +1762,7 @@
       backTop.classList.toggle('visible', y > 400);
     });
 
-    /* ----- Hamburger / Mobile menu ----- */
+
     const hamburger = document.getElementById('hamburger');
     const mobileMenu = document.getElementById('mobileMenu');
     const mobileClose = document.getElementById('mobileClose');
@@ -1766,14 +1772,14 @@
 
     function closeMobile() { mobileMenu.classList.remove('open'); }
 
-    /* ----- Cursor glow ----- */
+
     const cursorGlow = document.getElementById('cursorGlow');
     document.addEventListener('mousemove', e => {
       cursorGlow.style.left = e.clientX + 'px';
       cursorGlow.style.top = e.clientY + 'px';
     });
 
-    /* ----- Scroll reveal ----- */
+
     const revealEls = document.querySelectorAll('.reveal');
     const io = new IntersectionObserver((entries) => {
       entries.forEach(e => {
@@ -1786,7 +1792,7 @@
 
     revealEls.forEach(el => io.observe(el));
 
-    /* ----- Typewriter ----- */
+
     const roles = [
       'Full Stack Developer.',
       'Angular Developer.',
